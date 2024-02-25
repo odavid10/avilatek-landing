@@ -1,5 +1,9 @@
-import { Typography } from "@mui/material";
+import { MainSection } from "../views";
 
 export const LandingPage = () => {
-  return <Typography variant="h1">Avila Tek - Landing Test</Typography>;
+  return (
+    <>
+      <MainSection />
+    </>
+  );
 };

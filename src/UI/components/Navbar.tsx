@@ -17,6 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 // project imports
 import { Logo } from "./Logo";
 import { UIButton } from "../buttons/Button";
+import { weight } from "../weight";
 
 const pages = ["Home", "Products", "Resources", "Pricing"];
 
@@ -106,21 +107,23 @@ export const Navbar = () => {
                   display: { xs: "none", md: "flex" },
                 }}
               >
-                <UIButton
-                  variant="text"
-                  sx={{ textTransform: "none", marginRight: 2 }}
-                >
+                <UIButton variant="text" sx={{ marginRight: 2 }}>
                   <Typography
                     variant="h4"
-                    fontWeight={600}
-                    onClick={handleCloseNavMenu}
+                    fontWeight={weight["semi-bold"]}
                     color="text.secondary"
                   >
                     Log In
                   </Typography>
                 </UIButton>
-                <UIButton variant="contained" sx={{ textTransform: "none" }}>
-                  Sign Up
+                <UIButton variant="contained">
+                  <Typography
+                    variant="h4"
+                    fontWeight={weight["semi-bold"]}
+                    color="#FFF"
+                  >
+                    Sign Up
+                  </Typography>
                 </UIButton>
               </Box>
             </Grid>

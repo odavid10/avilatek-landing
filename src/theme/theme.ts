@@ -37,5 +37,9 @@ export const theme = createTheme({
       lineHeight: "24px",
       fontSize: "16px",
     },
+    h5: {
+      lineHeight: "20px",
+      fontSize: "14px",
+    },
   },
 });
