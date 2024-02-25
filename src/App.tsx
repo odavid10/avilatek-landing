@@ -1,5 +1,11 @@
+import { AppTheme } from "./theme";
+
 const App = () => {
-  return <h1>Avila Tek - Landing Test</h1>;
+  return (
+    <AppTheme>
+      <h1>Avila Tek - Landing Test</h1>
+    </AppTheme>
+  );
 };
 
 export default App;
