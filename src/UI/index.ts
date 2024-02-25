@@ -1,4 +1,5 @@
 export * from "./buttons/Button";
+export * from "./components/Logo";
 export * from "./components/Navbar";
 export * from "./radius";
 export * from "./spacing";

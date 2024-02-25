@@ -1,7 +1,4 @@
-import { Typography } from "@mui/material";
-
-// project imports
-import { TextProps } from "../../interfaces";
+import { Typography, TypographyProps } from "@mui/material";
 
 export const Text = ({
   children,
@@ -9,7 +6,7 @@ export const Text = ({
   fontWeight,
   color,
   ...props
-}: TextProps) => {
+}: TypographyProps) => {
   return (
     <Typography
       fontWeight={fontWeight}

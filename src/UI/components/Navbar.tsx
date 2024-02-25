@@ -1,3 +1,132 @@
+import { MouseEvent, useState } from "react";
+
+// material-ui
+import {
+  AppBar,
+  Box,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  Grid,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+// project imports
+import { Logo } from "./Logo";
+import { UIButton } from "../buttons/Button";
+
+const pages = ["Home", "Products", "Resources", "Pricing"];
+
 export const Navbar = () => {
-  return <div>Navbar</div>;
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  return (
+    <AppBar position="static" sx={{ backgroundColor: "#FFF" }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Logo />
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item xs={12} md={9}>
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {pages.map((page) => (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  marginLeft: "40px",
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                {pages.map((page) => (
+                  <Typography
+                    key={page}
+                    variant="h4"
+                    fontWeight={600}
+                    onClick={handleCloseNavMenu}
+                    color="text.secondary"
+                    mx={2}
+                    sx={{
+                      cursor: "pointer",
+                    }}
+                  >
+                    {page}
+                  </Typography>
+                ))}
+              </Box>
+            </Grid>
+            <Grid item md={3}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  marginLeft: "40px",
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                <UIButton
+                  variant="text"
+                  sx={{ textTransform: "none", marginRight: 2 }}
+                >
+                  <Typography
+                    variant="h4"
+                    fontWeight={600}
+                    onClick={handleCloseNavMenu}
+                    color="text.secondary"
+                  >
+                    Log In
+                  </Typography>
+                </UIButton>
+                <UIButton variant="contained" sx={{ textTransform: "none" }}>
+                  Sign Up
+                </UIButton>
+              </Box>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
 };

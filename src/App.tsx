@@ -1,10 +1,13 @@
-import { H1 } from "./UI";
 import { AppTheme } from "./theme";
+import { LandingPage } from "./pages";
+import { MainLayout } from "./layout/MainLayout";
 
 const App = () => {
   return (
     <AppTheme>
-      <H1>Avila Tek - Landing Test</H1>
+      <MainLayout>
+        <LandingPage />
+      </MainLayout>
     </AppTheme>
   );
 };
