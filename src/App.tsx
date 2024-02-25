@@ -1,9 +1,10 @@
+import { H1 } from "./UI";
 import { AppTheme } from "./theme";
 
 const App = () => {
   return (
     <AppTheme>
-      <h1>Avila Tek - Landing Test</h1>
+      <H1>Avila Tek - Landing Test</H1>
     </AppTheme>
   );
 };

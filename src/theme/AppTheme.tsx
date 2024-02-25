@@ -3,7 +3,7 @@ import { CssBaseline } from "@mui/material";
 
 // project imports
 import { theme } from "./theme";
-import { AppThemeHOCProps } from "../intefaces";
+import { AppThemeHOCProps } from "../interfaces";
 
 export const AppTheme = ({ children }: AppThemeHOCProps) => {
   return (
