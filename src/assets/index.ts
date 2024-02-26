@@ -8,3 +8,5 @@ export * from "./svg/icons/Notion";
 export * from "./svg/icons/Slack";
 export * from "./svg/icons/Team";
 export * from "./svg/icons/Zap";
+export * from "./svg/icons/PlayStore";
+export * from "./svg/icons/AppStore";

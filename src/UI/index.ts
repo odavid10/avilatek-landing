@@ -2,6 +2,7 @@ export * from "./buttons/Button";
 export * from "./colors";
 export * from "./components/Logo";
 export * from "./components/Navbar";
+export * from "./components/Footer";
 export * from "./inputs/TextField";
 export * from "./radius";
 export * from "./spacing";

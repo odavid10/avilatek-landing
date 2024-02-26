@@ -9,23 +9,34 @@ import { spacing } from "../spacing";
 
 interface Props extends ChipProps {
   children: any;
+  width?: string | number;
+  height?: string | number;
+  variant?: any;
 }
 
-export const UIChip = ({ children }: Props) => {
+export const UIChip = ({
+  children,
+  width,
+  height,
+  variant,
+  size,
+  style,
+}: Props) => {
   const theme = useTheme();
   return (
     <div
       style={{
-        height: "28px",
-        width: "105px",
+        height: height || "28px",
+        width: width || "105px",
         border: `1px solid ${colors.brand200}`,
         backgroundColor: colors.brand50,
         borderRadius: radius.full,
-        padding: `${spacing.xs} ${spacing.lg}`,
+        padding: size !== "small" ? `${spacing.xs} ${spacing.lg}` : "",
+        ...style,
       }}
     >
       <Typography
-        variant="h5"
+        variant={variant || "h5"}
         color={theme.palette.primary.dark}
         fontWeight={weight.medium}
         align="center"

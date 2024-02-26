@@ -41,5 +41,9 @@ export const theme = createTheme({
       lineHeight: "20px",
       fontSize: "14px",
     },
+    h6: {
+      fontSize: "12px",
+      lineHeight: "18px",
+    },
   },
 });
