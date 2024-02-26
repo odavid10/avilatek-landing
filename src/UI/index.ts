@@ -1,4 +1,5 @@
 export * from "./buttons/Button";
+export * from "./colors";
 export * from "./components/Logo";
 export * from "./components/Navbar";
 export * from "./inputs/TextField";

@@ -8,7 +8,9 @@ export const MainLayout = ({ children }: any) => {
     <Box flexGrow={1}>
       <Navbar />
 
-      {children}
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        {children}
+      </Box>
     </Box>
   );
 };

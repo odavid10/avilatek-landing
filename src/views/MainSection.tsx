@@ -102,8 +102,9 @@ export const MainSection = () => {
         direction={"column"}
         justifyContent={"center"}
         alignItems={"center"}
+        mb={"180px"}
       >
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <Grafico />
         </Grid>
       </Grid>
