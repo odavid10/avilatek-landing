@@ -31,7 +31,7 @@ const features: IntegrationsProps[] = [
 
 export const FeaturesSection = () => {
   return (
-    <Box mt={"600px"} paddingX={"14%"}>
+    <Box paddingX={"14%"}>
       <Grid container direction={"column"} alignItems={"center"} mb={"16px"}>
         <Grid item xs={12}>
           <UIChip>Features</UIChip>

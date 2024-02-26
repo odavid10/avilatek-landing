@@ -8,5 +8,6 @@ export const spacing = {
   "3xl": "24px",
   "4xl": "32px",
   "6xl": "48px",
+  "7xl": "64px",
   "9xl": "96px",
 };
