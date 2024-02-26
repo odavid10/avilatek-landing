@@ -11,7 +11,7 @@ export const CTASection = () => {
       borderRadius={radius["4xl"]}
       bgcolor={theme.palette.primary.main}
       height={"400px"}
-      maxWidth={"1216px"}
+      maxWidth={"90%"}
       marginX={"auto"}
       mb={"96px"}
     >
@@ -65,11 +65,9 @@ export const CTASection = () => {
             alt="Give a shot"
             style={{
               width: "100%",
-              maxWidth: "480px",
               height: "400px",
               borderTopRightRadius: radius["4xl"],
               borderBottomRightRadius: radius["4xl"],
-              marginLeft: "1px",
             }}
           />
         </Grid>
