@@ -40,7 +40,7 @@ const FAQS: Faqs[] = [
 
 export const FAQSection = () => {
   return (
-    <Box paddingX={"14%"}>
+    <Box paddingX={"14%"} mb={"200px"}>
       <Typography
         variant="h2"
         color="text.primary"

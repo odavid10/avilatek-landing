@@ -4,6 +4,7 @@ import {
   FeaturesSection,
   IntegrationsSection,
   MainSection,
+  ReviewSection,
   TrialSection,
 } from "../views";
 
@@ -16,6 +17,7 @@ export const LandingPage = () => {
       <FeaturesSection />
       <TrialSection />
       <FAQSection />
+      <ReviewSection />
     </>
   );
 };
