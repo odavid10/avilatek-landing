@@ -29,11 +29,22 @@ const companyList: string[] = [
 
 export const Footer = () => {
   const theme = useTheme();
+  const isMobileDevice = theme.breakpoints.down("sm");
 
   return (
-    <Box height={"400px"} padding={`${spacing["7xl"]} 80px`}>
+    <Box
+      maxHeight={"400px"}
+      padding={isMobileDevice ? "10px" : `${spacing["7xl"]} 80px`}
+    >
       <Grid container justifyContent={"space-between"}>
-        <Grid item xs={10} display={"flex"}>
+        <Grid
+          item
+          xs={12}
+          md={10}
+          order={{ xs: 2, md: 1 }}
+          display={"flex"}
+          mt={isMobileDevice ? "48px" : 0}
+        >
           <div style={{ marginRight: "32px" }}>
             <Typography
               variant="h5"
@@ -89,35 +100,44 @@ export const Footer = () => {
             ))}
           </div>
         </Grid>
-        <Grid item xs={1}>
-          <Typography
-            variant="h5"
-            color="textPrimary"
-            fontWeight={weight["semi-bold"]}
-            mb={"16px"}
-          >
-            Get the app
-          </Typography>
-
-          <AppStore style={{ marginBottom: "16px" }} />
-          <PlayStore />
+        <Grid item xs={12} md={2} order={{ xs: 1, md: 2 }}>
+          <div>
+            <Typography
+              variant="h5"
+              color="textPrimary"
+              fontWeight={weight["semi-bold"]}
+              mb={"16px"}
+            >
+              Get the app
+            </Typography>
+            <AppStore
+              style={{
+                marginBottom: isMobileDevice ? 0 : "16px",
+                marginRight: isMobileDevice ? "16px" : 0,
+              }}
+            />
+            <PlayStore />
+          </div>
         </Grid>
       </Grid>
 
       <Divider />
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          paddingTop: "36px",
-        }}
+      <Grid
+        container
+        display={"flex"}
+        justifyContent={"space-between"}
+        pt={"36px"}
       >
-        <Logo />
-        <Typography variant="h4" color={colors.textQuarterary}>
-          © 2077 Untitled UI. All rights reserved.
-        </Typography>
-      </div>
+        <Grid item>
+          <Logo />
+        </Grid>
+        <Grid item>
+          <Typography variant="h4" color={colors.textQuarterary}>
+            © 2077 Untitled UI. All rights reserved.
+          </Typography>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

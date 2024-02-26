@@ -1,4 +1,5 @@
-export * from "./svg/Grafico";
+export * from "./svg/ilustrations/Grafico";
+export * from "./svg/ilustrations/GraficoResponsive";
 export * from "./svg/icons/AppStore";
 export * from "./svg/icons/Chart";
 export * from "./svg/icons/Drive";
