@@ -11,6 +11,7 @@ export const IntegrationsCard = ({
   subtitle,
   icon,
   index = 0,
+  textButton,
 }: Pros) => {
   return (
     <Grid
@@ -55,7 +56,7 @@ export const IntegrationsCard = ({
             marginTop: "20px",
           }}
         >
-          View integration <ArrowForwardIcon style={{ marginLeft: "12px" }} />
+          {textButton} <ArrowForwardIcon style={{ marginLeft: "12px" }} />
         </UIButton>
       </Grid>
     </Grid>

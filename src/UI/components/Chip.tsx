@@ -28,6 +28,7 @@ export const UIChip = ({ children }: Props) => {
         variant="h5"
         color={theme.palette.primary.dark}
         fontWeight={weight.medium}
+        align="center"
       >
         {children}
       </Typography>

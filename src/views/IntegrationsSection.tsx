@@ -91,6 +91,7 @@ export const IntegrationsSection = () => {
               icon={app.icon}
               title={app.title}
               subtitle={app.subtitle}
+              textButton="View integration"
             />
           </Grid>
         ))}

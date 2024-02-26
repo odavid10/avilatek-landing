@@ -7,4 +7,5 @@ export interface IntegrationsProps {
   subtitle: string;
   index?: number;
   icon?: Element | any;
+  textButton?: string;
 }
