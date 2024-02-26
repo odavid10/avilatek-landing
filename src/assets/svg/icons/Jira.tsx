@@ -78,10 +78,10 @@ export const Jira = (props: SVGProps<SVGSVGElement>) => (
         <feGaussianBlur stdDeviation={1} />
         <feComposite in2="hardAlpha" operator="out" />
         <feColorMatrix values="0 0 0 0 0.0627451 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.05 0" />
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_889_17" />
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_934_17" />
         <feBlend
           in="SourceGraphic"
-          in2="effect1_dropShadow_889_17"
+          in2="effect1_dropShadow_934_17"
           result="shape"
         />
       </filter>

@@ -55,19 +55,11 @@ export const MainSection = () => {
         </Grid>
         <Grid item xs={12}>
           <Grid container>
-            <Grid item xs={8}>
+            <Grid item xs={8} pt={"8px"}>
               <UITextfield
                 fullWidth
                 id="email"
                 placeholder="Enter your email"
-                sx={{
-                  backgroundColor: "#FFF",
-                  borderRadius: radius.md,
-                  marginBottom: "6px",
-                  "& .MuiInputBase-input": {
-                    height: "18px",
-                  },
-                }}
               />
               <Typography variant="h5" color="#FFF" width={"335px"}>
                 We care about your data in our{" "}

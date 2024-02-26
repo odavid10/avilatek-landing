@@ -15,6 +15,7 @@ export const UITextfield = (props: TextFieldProps) => {
         marginBottom: "6px",
         "& .MuiInputBase-input": {
           height: "18px",
+          fontSize: "16px",
         },
       }}
       {...props}

@@ -49,5 +49,9 @@ export const theme = createTheme({
       fontSize: "18px",
       lineHeight: "28px",
     },
+    body1: {
+      fontSize: "48px",
+      lineHeight: "60px",
+    },
   },
 });

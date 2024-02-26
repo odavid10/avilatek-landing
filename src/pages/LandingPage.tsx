@@ -4,6 +4,7 @@ import {
   FeaturesSection,
   IntegrationsSection,
   MainSection,
+  TrialSection,
 } from "../views";
 
 export const LandingPage = () => {
@@ -13,6 +14,7 @@ export const LandingPage = () => {
       <IntegrationsSection />
       <CTASection />
       <FeaturesSection />
+      <TrialSection />
       <FAQSection />
     </>
   );
