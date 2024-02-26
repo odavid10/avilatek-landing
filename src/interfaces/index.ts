@@ -9,3 +9,8 @@ export interface IntegrationsProps {
   icon?: Element | any;
   textButton?: string;
 }
+
+export interface Faqs {
+  title: string;
+  detail: string;
+}

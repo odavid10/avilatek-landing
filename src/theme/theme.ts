@@ -21,29 +21,33 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Inter",
     h1: {
-      lineHeight: "90px",
       fontSize: "72px",
+      lineHeight: "90px",
       fontWeight: 600,
     },
     h2: {
-      lineHeight: "44px",
       fontSize: "36px",
+      lineHeight: "44px",
     },
     h3: {
-      lineHeight: "30px",
       fontSize: "20px",
+      lineHeight: "30px",
     },
     h4: {
-      lineHeight: "24px",
       fontSize: "16px",
+      lineHeight: "24px",
     },
     h5: {
-      lineHeight: "20px",
       fontSize: "14px",
+      lineHeight: "20px",
     },
     h6: {
       fontSize: "12px",
       lineHeight: "18px",
+    },
+    subtitle1: {
+      fontSize: "18px",
+      lineHeight: "28px",
     },
   },
 });

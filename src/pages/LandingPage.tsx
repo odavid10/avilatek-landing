@@ -1,5 +1,6 @@
 import {
   CTASection,
+  FAQSection,
   FeaturesSection,
   IntegrationsSection,
   MainSection,
@@ -12,6 +13,7 @@ export const LandingPage = () => {
       <IntegrationsSection />
       <CTASection />
       <FeaturesSection />
+      <FAQSection />
     </>
   );
 };
