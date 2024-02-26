@@ -33,7 +33,10 @@ export const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#FFF" }}>
+    <AppBar
+      position="static"
+      sx={{ backgroundColor: "#FFF", boxShadow: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Logo />
@@ -112,6 +115,7 @@ export const Navbar = () => {
                     variant="h4"
                     fontWeight={weight["semi-bold"]}
                     color="text.secondary"
+                    textTransform={"none"}
                   >
                     Log In
                   </Typography>
