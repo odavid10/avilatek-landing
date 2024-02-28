@@ -55,6 +55,7 @@ export const IntegrationsCard = ({
           sx={{
             marginTop: "20px",
             fontWeight: weight["semi-bold"],
+            textTransform: "none",
           }}
         >
           {textButton} <ArrowForwardIcon style={{ marginLeft: "12px" }} />

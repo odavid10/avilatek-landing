@@ -16,7 +16,7 @@ export const MainSection = () => {
     <Box
       borderRadius={isMobileDevice ? 0 : radius["4xl"]}
       bgcolor={theme.palette.primary.main}
-      height={"674px"}
+      height={isMobileDevice ? "830px" : "674px"}
       marginX={isMobileDevice ? 0 : "10%"}
       marginTop={isMobileDevice ? 0 : "32px"}
       sx={{
@@ -57,8 +57,8 @@ export const MainSection = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Grid container>
-            <Grid item xs={12} md={8} pt={"8px"}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={8} mt={"8px"}>
               <UITextfield
                 fullWidth
                 id="email"
@@ -77,7 +77,7 @@ export const MainSection = () => {
                 fullWidth
                 variant="contained"
                 color="secondary"
-                sx={{ marginLeft: isMobileDevice ? 0 : "16px", height: "48px" }}
+                sx={{ height: "48px" }}
               >
                 <Typography
                   variant="h5"

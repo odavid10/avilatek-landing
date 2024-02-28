@@ -5,6 +5,9 @@ import { Box, Grid, Typography, useTheme } from "@mui/material";
 import { weight, UIButton, radius, colors, spacing } from "../UI";
 import { useMobileDevice } from "../hooks";
 
+const widthResponsive = "100%";
+const heigthResponsive = "160px";
+
 export const TrialSection = () => {
   const theme = useTheme();
   const { isMobileDevice } = useMobileDevice();
@@ -13,8 +16,8 @@ export const TrialSection = () => {
     <Box
       bgcolor={theme.palette.grey[100]}
       padding={isMobileDevice ? "0 16px" : `${spacing["9xl"]} 80px`}
-      height={isMobileDevice ? "1284px" : "688px"}
-      mb={isMobileDevice ? 0 : "100px"}
+      minHeight={isMobileDevice ? "1284px" : "688px"}
+      mb={isMobileDevice ? "65px" : "100px"}
     >
       <Grid container>
         <Grid
@@ -97,53 +100,63 @@ export const TrialSection = () => {
                   alignItems={"flex-end"}
                 >
                   <img
-                    src="/assets/img/Image2.png"
+                    src={`/assets/img/Image${isMobileDevice ? 7 : 2}.png`}
                     alt="Image2"
-                    width={"160px"}
-                    height={"160px"}
+                    width={isMobileDevice ? widthResponsive : "160px"}
+                    height={heigthResponsive}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <img
-                    src="/assets/img/Image3.png"
+                    src={`/assets/img/Image${isMobileDevice ? 8 : 3}.png`}
                     alt="Image3"
-                    width={"160px"}
-                    height={"240px"}
+                    width={isMobileDevice ? widthResponsive : "160px"}
+                    height={isMobileDevice ? heigthResponsive : "240px"}
                   />
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12} mt={"16px"}>
-              <Grid container spacing={2}>
+              <Grid container spacing={1}>
                 <Grid
                   item
                   xs={12}
-                  sm={5}
+                  sm={4}
+                  lg={4}
                   display={"flex"}
                   justifyContent={"flex-end"}
                 >
                   <img
-                    src="/assets/img/Image4.png"
+                    src={`/assets/img/Image${isMobileDevice ? 9 : 4}.png`}
                     alt="Image4"
-                    width={"192px"}
-                    height={"128px"}
+                    width={"100%"}
+                    height={isMobileDevice ? heigthResponsive : "128px"}
                   />
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  lg={3}
+                  display={"flex"}
+                  justifyContent={"center"}
+                >
                   <img
-                    src="/assets/img/Image5.png"
+                    src={`/assets/img/Image${isMobileDevice ? 10 : 5}.png`}
                     alt="Image5"
-                    width={"160px"}
-                    height={"240px"}
+                    width={"100%"}
+                    height={isMobileDevice ? heigthResponsive : "240px"}
+                    style={{
+                      maxWidth: isMobileDevice ? widthResponsive : "160px",
+                    }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={4} lg={4}>
                   <img
-                    src="/assets/img/Image1.png"
+                    src={`/assets/img/Image${isMobileDevice ? 11 : 1}.png`}
                     alt="Image1"
-                    width={"192px"}
-                    height={"128px"}
-                    style={{ marginLeft: "18px" }}
+                    width={"100%"}
+                    height={isMobileDevice ? heigthResponsive : "128px"}
                   />
                 </Grid>
               </Grid>

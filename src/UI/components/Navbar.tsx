@@ -18,6 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Logo } from "./Logo";
 import { UIButton } from "../buttons/Button";
 import { weight } from "../weight";
+import { colors } from "../colors";
 
 const pages = ["Home", "Products", "Resources", "Pricing"];
 
@@ -42,14 +43,20 @@ export const Navbar = () => {
           <Logo />
           <Grid container justifyContent="center" alignItems="center">
             <Grid item xs={12} md={9}>
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "flex", md: "none" },
+                  marginLeft: "70%",
+                }}
+              >
                 <IconButton
                   size="large"
                   aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
                   onClick={handleOpenNavMenu}
-                  color="inherit"
+                  sx={{ color: colors.buttonSecondary }}
                 >
                   <MenuIcon />
                 </IconButton>
