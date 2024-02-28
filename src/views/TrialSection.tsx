@@ -123,6 +123,7 @@ export const TrialSection = () => {
                   xs={12}
                   sm={4}
                   lg={4}
+                  xl={5}
                   display={"flex"}
                   justifyContent={"flex-end"}
                 >
@@ -131,6 +132,7 @@ export const TrialSection = () => {
                     alt="Image4"
                     width={"100%"}
                     height={isMobileDevice ? heigthResponsive : "128px"}
+                    style={{ maxWidth: isMobileDevice ? "100%" : "192px" }}
                   />
                 </Grid>
                 <Grid
@@ -138,6 +140,7 @@ export const TrialSection = () => {
                   xs={12}
                   sm={4}
                   lg={3}
+                  xl={2}
                   display={"flex"}
                   justifyContent={"center"}
                 >
@@ -151,12 +154,13 @@ export const TrialSection = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12} sm={4} lg={4}>
+                <Grid item xs={12} sm={4} lg={4} xl={4}>
                   <img
                     src={`/assets/img/Image${isMobileDevice ? 11 : 1}.png`}
                     alt="Image1"
                     width={"100%"}
                     height={isMobileDevice ? heigthResponsive : "128px"}
+                    style={{ maxWidth: isMobileDevice ? "100%" : "192px" }}
                   />
                 </Grid>
               </Grid>
