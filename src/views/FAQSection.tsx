@@ -4,6 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { weight } from "../UI";
 import { Faqs } from "../interfaces";
 import { FaqAccordion } from "../components";
+import { useMobileDevice } from "../hooks";
 
 const FAQS: Faqs[] = [
   {
@@ -39,10 +40,12 @@ const FAQS: Faqs[] = [
 ];
 
 export const FAQSection = () => {
+  const { isMobileDevice } = useMobileDevice();
+
   return (
-    <Box paddingX={"14%"} mb={"200px"}>
+    <Box paddingX={"14%"} mb={isMobileDevice ? "128px" : "200px"}>
       <Typography
-        variant="h2"
+        variant={isMobileDevice ? "body2" : "h2"}
         color="text.primary"
         fontWeight={weight["semi-bold"]}
         align="center"
@@ -52,13 +55,13 @@ export const FAQSection = () => {
       </Typography>
 
       <Typography
-        variant="h5"
+        variant={isMobileDevice ? "subtitle1" : "h5"}
         color="text.secondary"
         fontWeight={weight.regular}
         align="center"
         mx={"auto"}
         maxWidth={"768px"}
-        mb={"64px"}
+        mb={isMobileDevice ? "48xp" : "64px"}
       >
         Everything you need to know about the product and billing.
       </Typography>

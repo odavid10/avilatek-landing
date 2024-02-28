@@ -49,9 +49,17 @@ export const theme = createTheme({
       fontSize: "18px",
       lineHeight: "28px",
     },
+    subtitle2: {
+      fontSize: "24px",
+      lineHeight: "32px",
+    },
     body1: {
       fontSize: "48px",
       lineHeight: "60px",
+    },
+    body2: {
+      fontSize: "30px",
+      lineHeight: "38px",
     },
   },
 });

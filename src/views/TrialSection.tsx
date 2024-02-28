@@ -2,31 +2,33 @@
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 
 // project imports
-import { weight, UIButton, radius, colors } from "../UI";
+import { weight, UIButton, radius, colors, spacing } from "../UI";
+import { useMobileDevice } from "../hooks";
 
 export const TrialSection = () => {
   const theme = useTheme();
+  const { isMobileDevice } = useMobileDevice();
 
   return (
     <Box
       bgcolor={theme.palette.grey[100]}
-      padding={"96px 80px"}
-      height={"688px"}
-      mb={"100px"}
+      padding={isMobileDevice ? "0 16px" : `${spacing["9xl"]} 80px`}
+      height={isMobileDevice ? "1284px" : "688px"}
+      mb={isMobileDevice ? 0 : "100px"}
     >
       <Grid container>
         <Grid
           item
           xs={12}
           sm={6}
-          paddingY={"113px"}
+          paddingY={isMobileDevice ? spacing["7xl"] : "113px"}
           display={"flex"}
           justifyContent={"center"}
         >
           <Grid container maxWidth={"576px"}>
             <Grid item xs={12}>
               <Typography
-                variant="body1"
+                variant={isMobileDevice ? "body2" : "body1"}
                 color="text.primary"
                 fontWeight={weight["semi-bold"]}
                 mb={"20px"}
@@ -36,7 +38,7 @@ export const TrialSection = () => {
             </Grid>
             <Grid item xs={12}>
               <Typography
-                variant="h3"
+                variant={isMobileDevice ? "subtitle1" : "h3"}
                 color="text.secondary"
                 fontWeight={weight.regular}
                 mb={"48px"}
@@ -45,23 +47,40 @@ export const TrialSection = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <UIButton
-                variant="contained"
-                sx={{
-                  backgroundColor: "#FFF",
-                  marginRight: "12px",
-                  color: colors.buttonSecondary,
-                  borderRadius: radius.md,
-                  height: "48px",
-                  maxWidth: "129px",
-                  textTransform: "none",
-                }}
-              >
-                Learn more
-              </UIButton>
-              <UIButton variant="contained" color="secondary">
-                Get Started
-              </UIButton>
+              <Grid container>
+                <Grid item xs={12} md={3} order={{ xs: 2, md: 1 }}>
+                  <UIButton
+                    fullWidth={isMobileDevice}
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "#FFF",
+                      marginRight: "12px",
+                      color: colors.buttonSecondary,
+                      borderRadius: radius.md,
+                      height: "48px",
+                      textTransform: "none",
+                      ":hover": { backgroundColor: "#FFF" },
+                    }}
+                  >
+                    Learn more
+                  </UIButton>
+                </Grid>
+                <Grid item xs={12} md={3} order={{ xs: 1, md: 2 }}>
+                  <UIButton
+                    fullWidth
+                    variant="contained"
+                    color="secondary"
+                    sx={{
+                      borderRadius: radius.md,
+                      height: "48px",
+                      textTransform: "none",
+                      maxWidth: isMobileDevice ? "100%" : "129px",
+                    }}
+                  >
+                    Get Started
+                  </UIButton>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

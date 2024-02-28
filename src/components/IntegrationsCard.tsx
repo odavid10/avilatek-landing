@@ -5,6 +5,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 // project import
 import { UIButton, weight } from "../UI";
 import { IntegrationsProps as Pros } from "../interfaces";
+import { useMobileDevice } from "../hooks";
 
 export const IntegrationsCard = ({
   title,
@@ -13,6 +14,7 @@ export const IntegrationsCard = ({
   index = 0,
   textButton,
 }: Pros) => {
+  const { isMobileDevice } = useMobileDevice();
   return (
     <Grid
       container
@@ -28,7 +30,7 @@ export const IntegrationsCard = ({
       </Grid>
       <Grid item xs={12}>
         <Typography
-          variant="h3"
+          variant={isMobileDevice ? "subtitle1" : "h3"}
           color="textPrimary"
           fontWeight={weight["semi-bold"]}
           align="center"
@@ -42,6 +44,7 @@ export const IntegrationsCard = ({
           color="textPrimary"
           fontWeight={weight.regular}
           align="center"
+          maxHeight={"48px"}
         >
           {subtitle}
         </Typography>
@@ -50,10 +53,8 @@ export const IntegrationsCard = ({
         <UIButton
           variant="text"
           sx={{
-            width: "156px",
-            height: "24px",
-            textTransform: "none",
             marginTop: "20px",
+            fontWeight: weight["semi-bold"],
           }}
         >
           {textButton} <ArrowForwardIcon style={{ marginLeft: "12px" }} />

@@ -3,18 +3,20 @@ import { Box, Grid, Rating, Typography, useTheme } from "@mui/material";
 
 // project imports
 import { radius, spacing, weight } from "../UI";
+import { useMobileDevice } from "../hooks";
 
 export const ReviewSection = () => {
   const theme = useTheme();
+  const { isMobileDevice } = useMobileDevice();
 
   return (
     <Box
       borderRadius={radius["4xl"]}
       bgcolor={theme.palette.primary.main}
-      height={"448px"}
+      height={isMobileDevice ? "670px" : "448px"}
       maxWidth={"90%"}
       marginX={"auto"}
-      mb={"160px"}
+      mb={isMobileDevice ? "112px" : "160px"}
     >
       <Grid container>
         <Grid item xs={12} sm={6} md={4}>
@@ -23,20 +25,27 @@ export const ReviewSection = () => {
             alt="Renee Wells"
             style={{
               width: "100%",
-              height: "448px",
+              height: isMobileDevice ? "280px" : "448px",
               borderTopLeftRadius: radius["4xl"],
-              borderBottomLeftRadius: radius["4xl"],
+              borderBottomLeftRadius: isMobileDevice ? 0 : radius["4xl"],
+              borderTopRightRadius: isMobileDevice ? radius["4xl"] : 0,
             }}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={8} padding={spacing["7xl"]}>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={8}
+          padding={isMobileDevice ? "12px" : spacing["7xl"]}
+        >
           <Grid container>
             <Grid item xs={12}>
               <Rating name="review" value={5} readOnly />
             </Grid>
             <Grid item xs={12}>
               <Typography
-                variant="h2"
+                variant={isMobileDevice ? "subtitle2" : "h2"}
                 color="#FFF"
                 fontWeight={weight.medium}
                 mb={"32px"}
@@ -51,7 +60,7 @@ export const ReviewSection = () => {
                 variant="subtitle1"
                 color="#FFF"
                 fontWeight={weight["semi-bold"]}
-                mb={"48px"}
+                mb={"4px"}
               >
                 — Renee Wells
               </Typography>

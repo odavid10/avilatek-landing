@@ -7,6 +7,7 @@ import { UIChip } from "../UI/components/Chip";
 import { IntegrationsCard } from "../components";
 import { IntegrationsProps } from "../interfaces";
 import { Chart, Team, Zap } from "../assets";
+import { useMobileDevice } from "../hooks";
 
 const features: IntegrationsProps[] = [
   {
@@ -30,15 +31,17 @@ const features: IntegrationsProps[] = [
 ];
 
 export const FeaturesSection = () => {
+  const { isMobileDevice } = useMobileDevice();
+
   return (
-    <Box paddingX={"14%"}>
+    <Box paddingX={isMobileDevice ? "4%" : "14%"}>
       <Grid container direction={"column"} alignItems={"center"} mb={"16px"}>
         <Grid item xs={12}>
           <UIChip>Features</UIChip>
         </Grid>
       </Grid>
       <Typography
-        variant="h2"
+        variant={isMobileDevice ? "body2" : "h2"}
         color="text.primary"
         fontWeight={weight["semi-bold"]}
         align="center"
@@ -48,7 +51,7 @@ export const FeaturesSection = () => {
       </Typography>
 
       <Typography
-        variant="h5"
+        variant={isMobileDevice ? "subtitle1" : "h3"}
         color="text.secondary"
         fontWeight={weight.regular}
         align="center"

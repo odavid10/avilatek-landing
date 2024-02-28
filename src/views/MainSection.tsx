@@ -1,14 +1,16 @@
+// material-ui
 import { Box, useTheme, Typography, Grid } from "@mui/material";
 
 // project imports
 import { UIButton, UITextfield, radius, spacing, weight } from "../UI";
+import { useMobileDevice } from "../hooks";
 
 // assests
 import { ChartResponsive, Grafico } from "../assets";
 
 export const MainSection = () => {
   const theme = useTheme();
-  const isMobileDevice = theme.breakpoints.down("sm");
+  const { isMobileDevice } = useMobileDevice();
 
   return (
     <Box
@@ -16,7 +18,7 @@ export const MainSection = () => {
       bgcolor={theme.palette.primary.main}
       height={"674px"}
       marginX={isMobileDevice ? 0 : "10%"}
-      marginTop={"32px"}
+      marginTop={isMobileDevice ? 0 : "32px"}
       sx={{
         padding: `${spacing["9xl"]} ${spacing["4xl"]} 192px ${spacing["4xl"]}`,
       }}

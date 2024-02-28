@@ -6,6 +6,7 @@ import { IntegrationsCard } from "../components";
 import { IntegrationsProps } from "../interfaces";
 import { Drive, Dropbox, Intercom, Jira, Notion, Slack } from "../assets";
 import { UIChip } from "../UI/components/Chip";
+import { useMobileDevice } from "../hooks";
 
 const integrations: IntegrationsProps[] = [
   {
@@ -47,15 +48,17 @@ const integrations: IntegrationsProps[] = [
 ];
 
 export const IntegrationsSection = () => {
+  const { isMobileDevice } = useMobileDevice();
+
   return (
-    <Box mt={"600px"} paddingX={"14%"}>
+    <Box mt={isMobileDevice ? "500px" : "600px"} paddingX={"14%"}>
       <Grid container direction={"column"} alignItems={"center"} mb={"16px"}>
         <Grid item xs={12}>
           <UIChip>Integrations</UIChip>
         </Grid>
       </Grid>
       <Typography
-        variant="h2"
+        variant={isMobileDevice ? "body2" : "h2"}
         color="text.primary"
         fontWeight={weight["semi-bold"]}
         align="center"
@@ -65,7 +68,7 @@ export const IntegrationsSection = () => {
       </Typography>
 
       <Typography
-        variant="h5"
+        variant={isMobileDevice ? "subtitle1" : "h3"}
         color="text.secondary"
         fontWeight={weight.regular}
         align="center"
